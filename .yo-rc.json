@@ -1,0 +1,38 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.hippsterhouse",
+            "nativeLanguage": "de"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "hippsterhouse",
+        "packageName": "com.hippsterhouse",
+        "packageFolder": "com/hippsterhouse",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "mysql",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "YzMwNGM3ZTg2MTc1YjBkNTg1ZTc0NzQwNmYxZmE0MTc1ODBhY2M1NzcyMmRiNzRkYTk2MTUwMTA0YjcyYjBkY2VhZmE3ZGQ5NWFlZmVmZjg0YWM1YzY3NDYyNjA1ODM1OWY3OTJmNTQ1MjBjZTE1OWRkNDg5YjgxNzQzMTNhNDU=",
+        "clientFramework": "angularX",
+        "useSass": false,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": true,
+        "nativeLanguage": "de",
+        "languages": ["de", "en"]
+    }
+}
