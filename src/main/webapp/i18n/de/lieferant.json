@@ -1,0 +1,22 @@
+{
+    "hippsterhouseApp": {
+        "lieferant": {
+            "home": {
+                "title": "Lieferants",
+                "createLabel": "Lieferant erstellen",
+                "createOrEditLabel": "Lieferant erstellen oder bearbeiten"
+            },
+            "created": "Lieferant erstellt mit ID {{ param }}",
+            "updated": "Lieferant aktualisiert mit ID {{ param }}",
+            "deleted": "Lieferant gelöscht mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Lieferant {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Lieferant"
+            },
+            "lname": "Lname",
+            "lname": "Lname"
+        }
+    }
+}

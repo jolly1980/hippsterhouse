@@ -1,0 +1,19 @@
+entity Artikel {
+	artikelbezeichnung String required minlength(3),
+    preis Double required
+}
+
+entity Lieferant {
+	lname String required,
+   
+
+}
+
+
+relationship OneToMany {
+	Lieferant{lname} to Artikel
+}
+
+
+
+

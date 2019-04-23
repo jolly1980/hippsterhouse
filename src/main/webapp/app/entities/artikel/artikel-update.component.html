@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-artikel-heading" jhiTranslate="hippsterhouseApp.artikel.home.createOrEditLabel">Create or edit a Artikel</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!artikel.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="artikel.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hippsterhouseApp.artikel.artikelbezeichnung" for="field_artikelbezeichnung">Artikelbezeichnung</label>
+                    <input type="text" class="form-control" name="artikelbezeichnung" id="field_artikelbezeichnung"
+                        [(ngModel)]="artikel.artikelbezeichnung" required minlength="3"/>
+                    <div [hidden]="!(editForm.controls.artikelbezeichnung?.dirty && editForm.controls.artikelbezeichnung?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.artikelbezeichnung?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.artikelbezeichnung?.errors?.minlength" jhiTranslate="entity.validation.minlength" [translateValues]="{ min: 3 }">
+                        This field is required to be at least 3 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hippsterhouseApp.artikel.preis" for="field_preis">Preis</label>
+                    <input type="number" class="form-control" name="preis" id="field_preis"
+                        [(ngModel)]="artikel.preis" required/>
+                    <div [hidden]="!(editForm.controls.preis?.dirty && editForm.controls.preis?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.preis?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.preis?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="hippsterhouseApp.artikel.lieferant" for="field_lieferant">Lieferant</label>
+                    <select class="form-control" id="field_lieferant" name="lieferant" [(ngModel)]="artikel.lieferant" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="lieferantOption.id === artikel.lieferant?.id ? artikel.lieferant : lieferantOption" *ngFor="let lieferantOption of lieferants; trackBy: trackLieferantById">{{lieferantOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
